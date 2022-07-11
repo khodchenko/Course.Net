@@ -1,71 +1,19 @@
 ﻿using System;
-using Lesson4Task;
+using Lesson5Task;
 
 namespace Course.Net
 {
-    public class Program
+    public class CourseConsole
     {
         static void Main()
         {
-            Lesson1Task.
-            sortArrrayInAscendingOrder(generateArray());
-        }
+            int[,] array = GenerateMatrix(2,2);
+            Lesson5Task.Lesson5Task.FlipArray(array);    
 
-        static void Test()
-        {
-            //int a = 10;
-            //int b = 0;
-            //Console.WriteLine(a / b);
-            //ArrayHelper.MaxIndex(new int[] { 1, 2, 3 });
-            //int a = int.MaxValue;
-            //checked
-            //{
-            //    int b = a + 1;
-            //    Console.WriteLine(a);
-            //    Console.WriteLine(b);
-            //}
 
-            //int[] array = null;
-            //try
-            //{
-            //    ArrayHelper.Reverse(array);
-            //}
-            //catch(NullReferenceException ex)
-            //{
-            //    Console.WriteLine(ex.Message);
-            //}
-            //catch (ArgumentException ex)
-            //{
-            //    Console.WriteLine(ex.Message);
-            //}
-            //try
-            //{
-            //    int item = Convert.ToInt32(Console.ReadLine());
-            //    Console.WriteLine(item);
-            //}
-            //catch (FormatException)//raise when incorrect input
-            //{
-            //    Console.WriteLine("Your message here");
-            //}
-            //catch(OverflowException ex)
-            //{
-            //    Console.WriteLine(ex.Message);
-            //}
-            ////catch(Exception ex)
-            //{
 
-            //}
-            //catch(Inva)
 
-            //int[] array = ArrayHelper.GenerateArray(6);
 
-            //PrintArray(array);
-
-            //ArrayHelper.HalfReverse(array);
-
-            //PrintArray(array);
-            //Console.WriteLine(ArrayHelper.MaxIndex(array));
-            //Console.WriteLine(ArrayHelper.Max(array));
         }
 
         static void PrintArray(int[] array)
@@ -76,6 +24,23 @@ namespace Course.Net
             }
 
             Console.WriteLine();
+        }
+
+        private static int[] GenerateArray()
+        {
+            int Min = 0;
+            int Max = 20;
+
+            int[] array = new int[7];
+
+            Random randNum = new Random();
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = randNum.Next(Min, Max);
+                Console.Write($"[{array[i]}] ");
+            }
+
+            return array;
         }
 
         private static int[,] GenerateMatrix(int x, int y)
